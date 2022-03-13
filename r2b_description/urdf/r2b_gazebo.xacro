@@ -19,6 +19,11 @@
 		<xacro:transmission_block joint_name="link_1_jnt"/>
 		<xacro:transmission_block joint_name="link_2_jnt"/>
 
+		<!-- preserving the EE dummy joint -->
+		<gazebo reference="ee_link_jnt">
+			<preserveFixedJoint>true</preserveFixedJoint>
+		</gazebo>
+
 		<!-- Adding colors to links -->
 		<gazebo reference="base_link">
 			<material>Gazebo/Blue</material>
