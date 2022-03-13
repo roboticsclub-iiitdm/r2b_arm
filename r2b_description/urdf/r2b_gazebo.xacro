@@ -19,6 +19,19 @@
 		<xacro:transmission_block joint_name="link_1_jnt"/>
 		<xacro:transmission_block joint_name="link_2_jnt"/>
 
+		<!-- Adding colors to links -->
+		<gazebo reference="base_link">
+			<material>Gazebo/Blue</material>
+		</gazebo>
+
+		<gazebo reference="link_1">
+			<material>Gazebo/Red</material>
+		</gazebo>
+
+		<gazebo reference="link_2">
+			<material>Gazebo/Orange</material>
+		</gazebo>
+
 		<!-- ros control plugin -->
 		<gazebo>
 			<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
