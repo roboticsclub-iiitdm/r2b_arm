@@ -8,17 +8,17 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="0.00073068 0.025055 0.0010739"
+        xyz="0.00073068 -0.0010739 0.025055"
         rpy="0 0 0" />
       <mass
         value="0.038209" />
       <inertia
         ixx="1.2081E-05"
-        ixy="-4.3058E-09"
-        ixz="-1.4586E-08"
-        iyy="1.8632E-05"
-        iyz="2.1753E-08"
-        izz="1.2226E-05" />
+        ixy="1.4586E-08"
+        ixz="-4.3058E-09"
+        iyy="1.2226E-05"
+        iyz="-2.1753E-08"
+        izz="1.8632E-05" />
     </inertial>
     <visual>
       <origin
@@ -61,7 +61,7 @@
         value="0.016989" />
       <inertia
         ixx="2.8178E-06"
-        ixy="-8.2697E-10"
+        ixy="-8.2698E-10"
         ixz="2.9601E-09"
         iyy="2.5263E-06"
         iyz="5.7316E-08"
@@ -97,7 +97,7 @@
     type="revolute">
     <origin
       xyz="-0.00328 0.00325 0.03878"
-      rpy="3.1416 -0.70536 0" />
+      rpy="3.1416 0 0" />
     <parent
       link="base_link" />
     <child
@@ -105,27 +105,29 @@
     <axis
       xyz="0 1 0" />
     <limit
-      lower="-0.86544"
-      upper="2.2762"
+      lower="-1.5708"
+      upper="1.5708"
       effort="5"
       velocity="5" />
-    <dynamics damping="0.3" friction="0.5"/>
+    <dynamics
+      damping="0.3"
+      friction="0.4" />
   </joint>
 
   <link
     name="link_2">
     <inertial>
       <origin
-        xyz="-0.039321 8.052E-11 -0.0015"
+        xyz="-0.039321 -7.1557E-16 -0.0015"
         rpy="0 0 0" />
       <mass
         value="0.0020676" />
       <inertia
         ixx="1.0065E-08"
-        ixy="3.2355E-15"
-        ixz="6.5643E-16"
+        ixy="-1.0326E-21"
+        ixz="8.8524E-23"
         iyy="1.3673E-06"
-        iyz="1.8552E-15"
+        iyz="1.8314E-15"
         izz="1.3743E-06" />
     </inertial>
     <visual>
@@ -158,7 +160,7 @@
     type="revolute">
     <origin
       xyz="-8.5788E-05 -0.02875 -0.087773"
-      rpy="-1.5708 -0.26503 0" />
+      rpy="1.5708 -1.5708 0" />
     <parent
       link="link_1" />
     <child
@@ -166,11 +168,28 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-1.8358"
-      upper="1.3058"
+      lower="-3.1416"
+      upper="3.1416"
       effort="5"
       velocity="5" />
-    <dynamics damping="0.3" friction="0.4"/>
+    <dynamics
+      damping="0.3"
+      friction="0.4" />
+  </joint>
+
+  <link name="ee_link">
+  </link>
+
+  <joint
+    name="ee_link_jnt"
+    type="fixed">
+    <origin
+      xyz="-0.091 0 -0.0015"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="link_2" />
+    <child
+      link="ee_link" />
   </joint>
 
   <xacro:include filename="$(find r2b_description)/urdf/r2b_gazebo.xacro"/>

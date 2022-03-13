@@ -34,8 +34,8 @@ class Ui_main_window(object):
 		self.reset_btn.setObjectName("reset_btn")
 		self.jnt_1_slider = QtWidgets.QSlider(self.central_widget)
 		self.jnt_1_slider.setGeometry(QtCore.QRect(210, 40, 491, 31))
-		self.jnt_1_slider.setMinimum(-85)
-		self.jnt_1_slider.setMaximum(108)
+		self.jnt_1_slider.setMinimum(-157)
+		self.jnt_1_slider.setMaximum(157)
 		self.jnt_1_slider.setProperty("value", 0)
 		self.jnt_1_slider.setSliderPosition(0)
 		self.jnt_1_slider.setOrientation(QtCore.Qt.Horizontal)
@@ -44,8 +44,8 @@ class Ui_main_window(object):
 		self.jnt_1_slider.setObjectName("jnt_1_slider")
 		self.jnt_2_slider = QtWidgets.QSlider(self.central_widget)
 		self.jnt_2_slider.setGeometry(QtCore.QRect(210, 150, 491, 31))
-		self.jnt_2_slider.setMinimum(-183)
-		self.jnt_2_slider.setMaximum(130)
+		self.jnt_2_slider.setMinimum(-314)
+		self.jnt_2_slider.setMaximum(314)
 		self.jnt_2_slider.setProperty("value", 0)
 		self.jnt_2_slider.setSliderPosition(0)
 		self.jnt_2_slider.setOrientation(QtCore.Qt.Horizontal)
@@ -81,7 +81,7 @@ class Ui_main_window(object):
 		self.jnt_1_lb.setText(_translate("main_window", "Joint 1"))
 		self.jnt_2_lb.setText(_translate("main_window", "Joint 2"))
 		self.reset_btn.setText(_translate("main_window", "Reset"))
-		self.jnt_1_value.setText(_translate("main_window", "0.0"))
+		self.jnt_1_value.setText(_translate("main_window", "90.0"))
 		self.jnt_2_value.setText(_translate("main_window", "0.0"))
 
 #########################################
@@ -114,7 +114,7 @@ class R2bJointControl(QMainWindow, Ui_main_window):
 		# joint_1
 		if slider_id == 0:
 			position = self.jnt_1_slider.value() / 100
-			self.jnt_1_value.setText(str(round(degrees(position),2)))
+			self.jnt_1_value.setText(str(round(90 - degrees(position),2)))
 			self.jnt_1_pub.publish(position)
 		
 		# joint_2
