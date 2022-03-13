@@ -1,34 +1,12 @@
-# sample_comm
+# r2b_control
 
 ## About
 
-`sample_comm` stands for *sample communication*. This respository is created for demonstrating basic communication between nodes in ROS during the Step Sessions conducted by Robotics Club, IIITDM Kancheepuram.
+Main package containing nodes, and launch files for execution of control algorithms, and simulations.
 
 ## Commands
 
-1. Display `Hello world` on console
+1. Launches the Gazebo simulation containing the r2b robot.
     ```bash
-    # for cpp node
-    rosrun sample_comm hello_cpp
-
-    # for python node
-    rosrun sample_comm hello.py
-    ```
-
-2. To start the standard publisher node
-    ```bash
-    # for cpp node
-    rosrun sample_comm chatter
-
-    # for python node
-    rosrun sample_comm chatter.py
-    ```
-
-3. To start the standard subscriber node
-    ```bash
-    # for cpp node
-    rosrun sample_comm listener
-
-    # for python node
-    rosrun sample_comm listener.py
+    roslaunch r2b_control gazebo.launch
     ```
