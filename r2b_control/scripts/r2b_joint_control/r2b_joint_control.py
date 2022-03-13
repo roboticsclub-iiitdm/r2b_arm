@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+from math import degrees
 import sys
 import signal
 
@@ -113,13 +114,13 @@ class R2bJointControl(QMainWindow, Ui_main_window):
 		# joint_1
 		if slider_id == 0:
 			position = self.jnt_1_slider.value() / 100
-			self.jnt_1_value.setText(str(position))
+			self.jnt_1_value.setText(str(round(degrees(position),2)))
 			self.jnt_1_pub.publish(position)
 		
 		# joint_2
 		elif slider_id == 1:
 			position = self.jnt_2_slider.value() / 100
-			self.jnt_2_value.setText(str(position))
+			self.jnt_2_value.setText(str(round(degrees(position),2)))
 			self.jnt_2_pub.publish(position)
 	
 	def on_reset_click(self):
