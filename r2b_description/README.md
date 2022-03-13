@@ -1,34 +1,12 @@
-# sample_comm
+# r2b_description
 
 ## About
 
-`sample_comm` stands for *sample communication*. This respository is created for demonstrating basic communication between nodes in ROS during the Step Sessions conducted by Robotics Club, IIITDM Kancheepuram.
+Contains resources describing the geometry, actuators, and sensors of the robot.
 
 ## Commands
 
-1. Display `Hello world` on console
+1. To visualize the r2b robot in RViz
     ```bash
-    # for cpp node
-    rosrun sample_comm hello_cpp
-
-    # for python node
-    rosrun sample_comm hello.py
-    ```
-
-2. To start the standard publisher node
-    ```bash
-    # for cpp node
-    rosrun sample_comm chatter
-
-    # for python node
-    rosrun sample_comm chatter.py
-    ```
-
-3. To start the standard subscriber node
-    ```bash
-    # for cpp node
-    rosrun sample_comm listener
-
-    # for python node
-    rosrun sample_comm listener.py
+    roslaunch r2b_description display.launch
     ```

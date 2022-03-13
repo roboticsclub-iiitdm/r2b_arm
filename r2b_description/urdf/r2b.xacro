@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="r2b_description">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00073068 0.025055 0.0010739"
+        rpy="0 0 0" />
+      <mass
+        value="0.038209" />
+      <inertia
+        ixx="1.2081E-05"
+        ixy="-4.3058E-09"
+        ixz="-1.4586E-08"
+        iyy="1.8632E-05"
+        iyz="2.1753E-08"
+        izz="1.2226E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://r2b_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://r2b_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_1">
+    <inertial>
+      <origin
+        xyz="6.0082E-05 -0.012068 -0.084882"
+        rpy="0 0 0" />
+      <mass
+        value="0.016989" />
+      <inertia
+        ixx="2.8178E-06"
+        ixy="-8.2697E-10"
+        ixz="2.9601E-09"
+        iyy="2.5263E-06"
+        iyz="5.7316E-08"
+        izz="9.8098E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://r2b_description/meshes/link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://r2b_description/meshes/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link_1_jnt"
+    type="revolute">
+    <origin
+      xyz="-0.00328 0.00325 0.03878"
+      rpy="3.1416 -0.70536 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.86544"
+      upper="2.2762"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_2">
+    <inertial>
+      <origin
+        xyz="-0.039321 8.052E-11 -0.0015"
+        rpy="0 0 0" />
+      <mass
+        value="0.0020676" />
+      <inertia
+        ixx="1.0065E-08"
+        ixy="3.2355E-15"
+        ixz="6.5643E-16"
+        iyy="1.3673E-06"
+        iyz="1.8552E-15"
+        izz="1.3743E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://r2b_description/meshes/link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://r2b_description/meshes/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link_2_jnt"
+    type="revolute">
+    <origin
+      xyz="-8.5788E-05 -0.02875 -0.087773"
+      rpy="-1.5708 -0.26503 0" />
+    <parent
+      link="link_1" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.8358"
+      upper="1.3058"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+</robot>
