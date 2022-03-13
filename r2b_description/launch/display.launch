@@ -2,7 +2,7 @@
 <launch>
 
   <arg	name="model"
-		default="$(find r2b_description)/urdf/r2b.xacro"/>
+		default="$(find r2b_description)/urdf/r2b.urdf.xacro"/>
   <arg	name="gui"
 		default="true"/>
   <arg	name="rvizconfig" 

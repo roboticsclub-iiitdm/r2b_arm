@@ -8,5 +8,5 @@ Contains XACRO and URDF files describing the structure and other functionalities
 
 | Name | Use-case |
 | --- | --- | 
-| r2b.xacro | Describes the r2b robot. |
+| r2b.urdf.xacro | Main XACRO file; describes the r2b robot. |
 | r2b_gazebo.xacro | Contains tags that aid in controlling joints in gazebo. |
