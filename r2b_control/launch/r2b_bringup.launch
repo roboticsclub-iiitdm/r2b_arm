@@ -38,8 +38,8 @@
 		 respawn="false"
 		 output="screen" 
 		 args="joint_state_controller
-		 	   link_1_controller
-			   link_2_controller"/>
+		 	   jnt_1_controller
+			   jnt_2_controller"/>
 	  
 	  <!-- start robot state publisher -->
 	  <node pkg="robot_state_publisher" 
