@@ -7,9 +7,13 @@
 	<xacro:property name="z" value="0.028"/>
 	<xacro:property name="mass" value="0.03"/>
 
+	<xacro:macro name="offseted_origin">
+		<origin xyz="-${x/2} 0.0 0.0" rpy="0.0 0.0 0.0"/>
+	</xacro:macro>
+
 	<xacro:macro name="box_inertia" params="m x y z">
 		<inertial>
-			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<xacro:offseted_origin/>
 			<mass value="${m}"/>
 			<inertia ixx="${m*(y*y+z*z)/12}" ixy="0.0" ixz="0.0"
 					 iyy="${m*(x*x+z*z)/12}" iyz="0.0"

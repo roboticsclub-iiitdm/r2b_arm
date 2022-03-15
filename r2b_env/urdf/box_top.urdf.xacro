@@ -7,13 +7,13 @@
 	<link name="base_link">
 		<xacro:box_inertia m="${mass}" x="${x}" y="${y}" z="${z}"/>
 		<visual>
-			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<xacro:offseted_origin/>
 			<geometry>
 				<box size="${x} ${y} ${z}"/>
 			</geometry>
 		</visual>
 		<collision>
-			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<xacro:offseted_origin/>
 			<geometry>
 				<box size="${x} ${y} ${z}"/>
 			</geometry>
