@@ -27,14 +27,38 @@
 		<!-- Adding colors to links -->
 		<gazebo reference="base_link">
 			<material>Gazebo/Blue</material>
+			<collision>
+				<surface>
+				<contact>
+					<collide_without_contact>true</collide_without_contact>
+				</contact>
+				</surface>
+			</collision>
+			<selfCollide>false</selfCollide>
 		</gazebo>
 
 		<gazebo reference="link_1">
 			<material>Gazebo/Red</material>
+			<collision>
+				<surface>
+				<contact>
+					<collide_without_contact>true</collide_without_contact>
+				</contact>
+				</surface>
+			</collision>
+			<selfCollide>false</selfCollide>
 		</gazebo>
 
 		<gazebo reference="link_2">
 			<material>Gazebo/Orange</material>
+			<collision>
+				<surface>
+				<contact>
+					<collide_without_contact>true</collide_without_contact>
+				</contact>
+				</surface>
+			</collision>
+			<selfCollide>false</selfCollide>
 		</gazebo>
 
 		<!-- ros control plugin -->
