@@ -17,6 +17,30 @@
         <uri>model://sun</uri>
     </include>
 
+    <plugin name="misalignment_plugin1" filename="libMisalignmentPlugin.so">
+      <pose frame="box_top::base_link"></pose>
+      <pose frame="r2b::ee_link"></pose>
+      <namespace>/r2b/box_top</namespace>
+      <debug>false</debug>
+      <enabled>true</enabled>
+    </plugin>
+
+    <plugin name="misalignment_plugin2" filename="libMisalignmentPlugin.so">
+      <pose frame="box_mid::base_link"></pose>
+      <pose frame="r2b::ee_link"></pose>
+      <namespace>/r2b/box_mid</namespace>
+      <debug>false</debug>
+      <enabled>true</enabled>
+    </plugin>
+    
+    <plugin name="misalignment_plugin3" filename="libMisalignmentPlugin.so">
+      <pose frame="box_down::base_link"></pose>
+      <pose frame="r2b::ee_link"></pose>
+      <namespace>/r2b/box_down</namespace>
+      <debug>false</debug>
+      <enabled>true</enabled>
+    </plugin>
+
     <gui fullscreen='0'>
       <camera name='user_camera'>
         <pose>-0.007857 0.473922 0.094596 0 0 -1.5708</pose>
