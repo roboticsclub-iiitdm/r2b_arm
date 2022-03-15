@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="box" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<xacro:include filename="$(find r2b_env)/urdf/box_common.xacro"/>
+
+	<link name="base_link">
+		<xacro:box_inertia m="${mass}" x="${x}" y="${y}" z="${z}"/>
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<geometry>
+				<box size="${x} ${y} ${z}"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<geometry>
+				<box size="${x} ${y} ${z}"/>
+			</geometry>
+		</collision>
+	</link>
+
+	<gazebo reference="base_link">
+		<material>Gazebo/Indigo</material>
+	</gazebo>
+
+</robot>
