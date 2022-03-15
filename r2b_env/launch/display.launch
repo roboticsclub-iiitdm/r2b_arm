@@ -6,7 +6,7 @@
   <arg	name="gui"
 		default="true"/>
   <arg	name="rvizconfig" 
-		default="$(find r2b_description)/config/urdf.rviz"/>
+		default="$(find r2b_env)/config/urdf.rviz"/>
 
   <param name="robot_description" 
 		 command="$(find xacro)/xacro $(arg model)" />
