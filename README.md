@@ -20,4 +20,7 @@ To setup the repository onto your local machine:
 ```bash
 # navigate to the src directory of your catkin workspace
 git clone --recursive https://github.com/roboticsclub-iiitdm/r2b_arm.git
+
+# install the gazebo development libraries (mandatory)
+sudo apt-get install libgazebo11-dev
 ```
