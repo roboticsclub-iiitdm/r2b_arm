@@ -1,7 +1,7 @@
 #include "ee_control.h"
 
 EEControl::EEControl(ros::NodeHandle &_nh){
-	this->nh_ = ros::NodeHandle("/r2b/ee_control");
+	this->nh_ = _nh;
 	this->connection_status_pub_ = this->nh_.advertise<r2b_utility::EeConnectionStatus>("/r2b/connection_status", 10);
 	this->connect_box_sub_	= this->nh_.subscribe("/r2b/connect_box", 10, &EEControl::connectBoxCallback, this);
 
