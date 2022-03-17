@@ -11,6 +11,7 @@ A metapackage containing ROS packages that aid in control, simulation, and visua
 | [r2b_control](./r2b_control) | Main package containing nodes, and launch files for execution of control algorithms, and simulations. | 
 | [r2b_description](./r2b_description) | Contains resources describing the geometry, actuators, and sensors of the robot. |
 | [r2b_env](./r2b_env) | Contains resources describing the Gazebo environment for simulation. |
+| [r2b_utility](./r2b_utility) | Contains utility resources like custom message, services, and other add-ons for better intuitive control of the r2b robot. |
 | [gazebo_ros_link_attacher](./gazebo_ros_link_attacher) | Utility ROS package added as a submodule to aid in simulating grasp. |
 
 ## Setup
