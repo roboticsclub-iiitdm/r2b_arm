@@ -1,4 +1,4 @@
-# r2b_description/src/em_ee
+# r2b_description/src/ee_control
 
 ## About
 
