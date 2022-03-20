@@ -25,6 +25,13 @@ ros::Publisher jnt_2_pub_;
 ros::Publisher box_attach_pub_;
 
 public:
+
+	/**
+	 * @brief Construct a new R2bSimController object (default)
+	 * 
+	 */
+	R2bSimController(){}
+
 	/**
 	 * @brief Construct a new R2bSimController object
 	 * 
@@ -33,17 +40,12 @@ public:
 	R2bSimController(ros::NodeHandle &nh);
 
 	/**
-	 * @brief Destroy the R2bSimController object
-	 */
-	~R2bSimController();
-
-	/**
 	 * @brief Set r2b robot's joint angles.
 	 * 
 	 * @param _jnt_1 Angle in degrees
 	 * @param _jnt_2 Angle in degrees
 	 */
-	void setJointAngles(double _jnt_1 = 0, double _jnt_2 = 0);
+	void setJointAngles(double _jnt_1, double _jnt_2);
 
 	/**
 	 * @brief Toggle the grasping of the cube.
