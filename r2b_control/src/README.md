@@ -8,4 +8,6 @@ Contains ROS nodes developed using CPP.
 
 | Name | Use-case |
 | --- | --- |
-| common/ | Contains utility code to easily control the r2b robot in simulation. |
+| [common/](./common) | Contains utility code to easily control the r2b robot in simulation. |
+| [example_task/](./example_task) | Contains an example task implemented using the Arduino-like interface. |
+| [simulation_task/](./simulation_task) | Contains template file that needs to be populated with the final logic for submission.|
