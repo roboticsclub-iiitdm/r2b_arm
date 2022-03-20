@@ -5,7 +5,7 @@
 	<xacro:property name="x" value="0.032"/>
 	<xacro:property name="y" value="0.03"/>
 	<xacro:property name="z" value="0.028"/>
-	<xacro:property name="mass" value="0.03"/>
+	<xacro:property name="mass" value="0.0003"/>
 
 	<xacro:macro name="offseted_origin">
 		<origin xyz="-${x/2} 0.0 0.0" rpy="0.0 0.0 0.0"/>
