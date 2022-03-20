@@ -53,4 +53,9 @@
 
 	</group>
 
+	<node pkg="r2b_description" 
+			type="ee_control" 
+			name="EEControl" 
+			output="screen"
+			respawn="true"/>
 </launch>
