@@ -3,13 +3,14 @@
 
 #include <ros/ros.h>
 #include <std_msgs/Float64.h>
+#include <std_msgs/Bool.h>
 
 class R2bSimController{
 
 private:
 
-/// @brief Flag variable indicating whether cube is grasped or not
-bool is_cube_grasped_;
+/// @brief Flag variable indicating whether box attach/detach request is sent or not
+std_msgs::Bool box_attach_rqst_sent_;
 
 /// @brief Joint angle message
 std_msgs::Float64 joint_angle_;
@@ -19,6 +20,9 @@ ros::Publisher jnt_1_pub_;
 
 /// @brief Joint 2 publisher
 ros::Publisher jnt_2_pub_;
+
+/// @brief Box attach/detach request publisher
+ros::Publisher box_attach_pub_;
 
 public:
 	/**
