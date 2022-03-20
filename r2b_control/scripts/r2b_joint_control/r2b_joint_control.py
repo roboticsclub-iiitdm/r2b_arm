@@ -9,7 +9,7 @@ from PyQt5.QtCore import QTimer
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
 import rospy
-from std_msgs.msg import Float64
+from std_msgs.msg import Float64, Bool
 
 #########################################
 # copied from r2b_joint_control_ui.py
@@ -70,6 +70,9 @@ class Ui_main_window(object):
 		self.jnt_2_value.setFrameShadow(QtWidgets.QFrame.Plain)
 		self.jnt_2_value.setAlignment(QtCore.Qt.AlignCenter)
 		self.jnt_2_value.setObjectName("jnt_2_value")
+		self.attach_btn = QtWidgets.QPushButton(self.central_widget)
+		self.attach_btn.setGeometry(QtCore.QRect(400, 190, 181, 31))
+		self.attach_btn.setObjectName("attach_btn")
 		main_window.setCentralWidget(self.central_widget)
 
 		self.retranslateUi(main_window)
@@ -81,8 +84,9 @@ class Ui_main_window(object):
 		self.jnt_1_lb.setText(_translate("main_window", "Joint 1"))
 		self.jnt_2_lb.setText(_translate("main_window", "Joint 2"))
 		self.reset_btn.setText(_translate("main_window", "Reset"))
-		self.jnt_1_value.setText(_translate("main_window", "90.0"))
+		self.jnt_1_value.setText(_translate("main_window", "0.0"))
 		self.jnt_2_value.setText(_translate("main_window", "0.0"))
+		self.attach_btn.setText(_translate("main_window", "Send attach command"))
 
 #########################################
 
@@ -95,9 +99,12 @@ class R2bJointControl(QMainWindow, Ui_main_window):
 	def __init__(self, parent=None):
 		super().__init__(parent)
 
+		self.attach_rqst_sent = False
+
 		# creating publishers
 		self.jnt_1_pub = rospy.Publisher("/r2b/jnt_1_controller/command", Float64, queue_size=1)
 		self.jnt_2_pub = rospy.Publisher("/r2b/jnt_2_controller/command", Float64, queue_size=1)
+		self.attach_rqst_pub = rospy.Publisher("/r2b/connect_box", Bool, queue_size=1)
 
 		self.setupUi(self)
 		self.connect_signals()
@@ -109,6 +116,7 @@ class R2bJointControl(QMainWindow, Ui_main_window):
 		self.jnt_1_slider.valueChanged.connect(lambda : self.on_slider_value_changed(0))
 		self.jnt_2_slider.valueChanged.connect(lambda : self.on_slider_value_changed(1))
 		self.reset_btn.clicked.connect(self.on_reset_click)
+		self.attach_btn.clicked.connect(self.on_attach_click)
 
 	def on_slider_value_changed(self, slider_id):
 		# joint_1
@@ -126,6 +134,15 @@ class R2bJointControl(QMainWindow, Ui_main_window):
 	def on_reset_click(self):
 		self.jnt_1_slider.setValue(0)
 		self.jnt_2_slider.setValue(0)
+
+	def on_attach_click(self):
+		if(self.attach_rqst_sent):
+			self.attach_btn.setText("Send attach command")
+			self.attach_rqst_sent = False
+		else:
+			self.attach_btn.setText("Send detach command")
+			self.attach_rqst_sent = True
+		self.attach_rqst_pub.publish(self.attach_rqst_sent)
 
 if __name__ == "__main__":
 	

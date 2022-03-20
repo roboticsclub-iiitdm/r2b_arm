@@ -65,6 +65,9 @@ class Ui_main_window(object):
 		self.jnt_2_value.setFrameShadow(QtWidgets.QFrame.Plain)
 		self.jnt_2_value.setAlignment(QtCore.Qt.AlignCenter)
 		self.jnt_2_value.setObjectName("jnt_2_value")
+		self.attach_btn = QtWidgets.QPushButton(self.central_widget)
+		self.attach_btn.setGeometry(QtCore.QRect(400, 190, 181, 31))
+		self.attach_btn.setObjectName("attach_btn")
 		main_window.setCentralWidget(self.central_widget)
 
 		self.retranslateUi(main_window)
@@ -78,3 +81,4 @@ class Ui_main_window(object):
 		self.reset_btn.setText(_translate("main_window", "Reset"))
 		self.jnt_1_value.setText(_translate("main_window", "0.0"))
 		self.jnt_2_value.setText(_translate("main_window", "0.0"))
+		self.attach_btn.setText(_translate("main_window", "Send attach command"))
