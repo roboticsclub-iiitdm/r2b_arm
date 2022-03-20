@@ -11,4 +11,4 @@ catkin_package(CATKIN_DEPENDS roscpp rospy std_msgs)
 
 include_directories(${catkin_INCLUDE_DIRS})
 
-# Add executables
+add_subdirectory(src)
