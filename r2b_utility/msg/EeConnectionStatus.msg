@@ -1,5 +1,2 @@
-float64 distance_from_box1
-float64 distance_from_box2
-float64 distance_from_box3
 uint8 can_connect_to
-bool is_connected
+bool connection_rqst_sent
