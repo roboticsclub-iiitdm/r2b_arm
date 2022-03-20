@@ -9,7 +9,7 @@ R2bSimController::R2bSimController(ros::NodeHandle &nh){
 }
 
 void R2bSimController::setJointAngles(double _jnt_1 = 0, double _jnt_2 = 0){
-	joint_angle_.data = _jnt_1 * (M_PI/180);
+	joint_angle_.data = (90 - _jnt_1) * (M_PI/180);
 	jnt_1_pub_.publish(joint_angle_);
 	
 	joint_angle_.data = _jnt_2 * (M_PI/180);
