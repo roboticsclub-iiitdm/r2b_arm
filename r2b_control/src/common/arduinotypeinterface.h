@@ -12,7 +12,7 @@ extern R2bSimController r2b;
 void setup(void);
 
 /**
- * @brief Code keeps on running continuously until CTRL+C is not pressed.
+ * @brief Code keeps on running continuously until CTRL+C is  pressed.
  * 
  */
 void loop(void);
