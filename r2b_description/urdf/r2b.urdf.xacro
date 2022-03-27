@@ -55,22 +55,22 @@
     name="link_1">
     <inertial>
       <origin
-        xyz="6.0082E-05 -0.012068 -0.084882"
-        rpy="0 0 0" />
+        xyz="0.084852 0.0002295 -0.0020854"
+        rpy="3.1416 0 0" />
       <mass
-        value="0.016989" />
+        value="0.016659" />
       <inertia
-        ixx="2.8178E-06"
-        ixy="-8.2698E-10"
-        ixz="2.9601E-09"
-        iyy="2.5263E-06"
-        iyz="5.7316E-08"
-        izz="9.8098E-07" />
+        ixx="9.6101E-07"
+        ixy="-3.0223E-09"
+        ixz="5.7382E-08"
+        iyy="2.783E-06"
+        iyz="7.0089E-10"
+        izz="2.4887E-06" />
     </inertial>
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="3.1416 0 0" />
       <geometry>
         <mesh
           filename="package://r2b_description/meshes/link_1.STL" />
@@ -84,7 +84,7 @@
     <collision>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="3.1416 0 0" />
       <geometry>
         <mesh
           filename="package://r2b_description/meshes/link_1.STL" />
@@ -96,14 +96,14 @@
     name="link_1_jnt"
     type="revolute">
     <origin
-      xyz="-0.00328 0.00325 0.03878"
-      rpy="3.1416 0 0" />
+      xyz="-0.00328 0.01745 0.03878"
+      rpy="1.5708 -1.5708 0" />
     <parent
       link="base_link" />
     <child
       link="link_1" />
     <axis
-      xyz="0 1 0" />
+      xyz="0 0 -1" />
     <limit
       lower="-1.5708"
       upper="1.5708"
@@ -118,17 +118,17 @@
     name="link_2">
     <inertial>
       <origin
-        xyz="-0.039321 -7.1557E-16 -0.0015"
+        xyz="0.03942 -1.3921E-16 -0.0016"
         rpy="0 0 0" />
       <mass
-        value="0.0020676" />
+        value="0.0020624" />
       <inertia
-        ixx="1.0065E-08"
-        ixy="-1.0326E-21"
-        ixz="8.8524E-23"
-        iyy="1.3673E-06"
-        iyz="1.8314E-15"
-        izz="1.3743E-06" />
+        ixx="1.0046E-08"
+        ixy="4.8513E-21"
+        ixz="1.8495E-20"
+        iyy="1.3592E-06"
+        iyz="-1.8314E-15"
+        izz="1.3662E-06" />
     </inertial>
     <visual>
       <origin
@@ -159,14 +159,14 @@
     name="link_2_jnt"
     type="revolute">
     <origin
-      xyz="-8.5788E-05 -0.02875 -0.087773"
-      rpy="1.5708 -1.5708 0" />
+      xyz="0.087773 0.00019421 -0.014"
+      rpy="0 0 0" />
     <parent
       link="link_1" />
     <child
       link="link_2" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 0 -1" />
     <limit
       lower="-3.1416"
       upper="3.1416"
@@ -189,8 +189,8 @@
     name="ee_link_jnt"
     type="fixed">
     <origin
-      xyz="-0.091 0 -0.0015"
-      rpy="-1.5708 0 1.5708" />
+      xyz="0.091 0 -0.0016"
+      rpy="0 0 0" />
     <parent
       link="link_2" />
     <child
