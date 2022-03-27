@@ -65,21 +65,20 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_link:
+        lower_compartment:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        link_1:
+        upper_compartment:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        link_2:
+        world:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -105,7 +104,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: base_link
+    Fixed Frame: world
     Frame Rate: 30
   Name: root
   Tools:
@@ -166,4 +165,4 @@ Window Geometry:
     collapsed: true
   Width: 1553
   X: 184
-  Y: 120
+  Y: 83
