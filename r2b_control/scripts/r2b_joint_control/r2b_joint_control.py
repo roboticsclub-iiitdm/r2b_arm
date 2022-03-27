@@ -84,7 +84,7 @@ class Ui_main_window(object):
 		self.jnt_1_lb.setText(_translate("main_window", "Joint 1"))
 		self.jnt_2_lb.setText(_translate("main_window", "Joint 2"))
 		self.reset_btn.setText(_translate("main_window", "Reset"))
-		self.jnt_1_value.setText(_translate("main_window", "0.0"))
+		self.jnt_1_value.setText(_translate("main_window", "90.0"))
 		self.jnt_2_value.setText(_translate("main_window", "0.0"))
 		self.attach_btn.setText(_translate("main_window", "Send attach command"))
 
@@ -121,8 +121,8 @@ class R2bJointControl(QMainWindow, Ui_main_window):
 	def on_slider_value_changed(self, slider_id):
 		# joint_1
 		if slider_id == 0:
-			position = self.jnt_1_slider.value() / 100
-			self.jnt_1_value.setText(str(round(90 - degrees(position),2)))
+			position = -(self.jnt_1_slider.value() / 100)
+			self.jnt_1_value.setText(str(round(90 + degrees(position),2)))
 			self.jnt_1_pub.publish(position)
 		
 		# joint_2
