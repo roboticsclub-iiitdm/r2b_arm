@@ -5,8 +5,8 @@ joint_state_controller:
 jnt_1_controller:
   type: position_controllers/JointPositionController
   joint: link_1_jnt
-  pid: {p: 100.0, i: 0.01, d: 10.0}
+  pid: {p: 10.0, i: 0.01, d: 5.0}
 jnt_2_controller:
   type: position_controllers/JointPositionController
   joint: link_2_jnt
-  pid: {p: 100.0, i: 0.01, d: 10.0}
+  pid: {p: 10.0, i: 0.01, d: 5.0}
